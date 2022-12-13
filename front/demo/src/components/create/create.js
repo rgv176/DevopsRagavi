@@ -1,34 +1,52 @@
 import React, { useState } from "react";
 import { Form, Button } from "semantic-ui-react";
-import axios from "axios";
+//import axios from "axios";
 
 export default function Create() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [input, setInput] = useState({
+    fname: "",
+    lname: "",
+  });
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setInput((prevInput) => {
+      return {
+        ...prevInput,
+        [name]: value,
+      };
+    });
+  }
 
-  console.log(firstName);
-  console.log(lastName);
-  const sendData = () => {};
+  function handleClick(event) {
+    event.preventDefault();
+    console.log(input);
+  }
   return (
     <div>
       <Form>
         <Form.Field>
           <label>First Name</label>
-          <input
-            name="fname"
-            onChange={(e) => setFirstName(e.target.value)}
-            placeholder="First Name"
-          />
+          <div>
+            <input
+              onChange={handleChange}
+              name="fname"
+              value={input.fname}
+              placeholder="First Name"
+            />
+          </div>
         </Form.Field>
         <Form.Field>
           <label>Last Name</label>
-          <input
-            name="lname"
-            onChange={(e) => setLastName(e.target.value)}
-            placeholder="Last Name"
-          />
+          <div>
+            <input
+              onChange={handleChange}
+              name="lname"
+              value={input.lname}
+              placeholder="Last Name"
+            />
+          </div>
         </Form.Field>
-        <Button type="submit" onClick={sendData}>
+        <Button onClick={handleClick} type="submit">
           Submit
         </Button>
       </Form>
