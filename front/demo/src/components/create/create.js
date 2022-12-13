@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "semantic-ui-react";
+import axios from "axios";
 
 export default function Create() {
   const [firstName, setFirstName] = useState("");
@@ -7,6 +8,7 @@ export default function Create() {
 
   console.log(firstName);
   console.log(lastName);
+  const sendData = () => {};
   return (
     <div>
       <Form>
@@ -26,7 +28,9 @@ export default function Create() {
             placeholder="Last Name"
           />
         </Form.Field>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" onClick={sendData}>
+          Submit
+        </Button>
       </Form>
     </div>
   );
