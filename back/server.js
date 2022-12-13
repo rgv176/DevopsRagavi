@@ -35,6 +35,18 @@ app.get("/read", (req, res) => {
     .then((items) => res.json(items))
     .catch((err) => console.log(err));
 });
+
+app.delete("/delete/:id", (req, res) => {
+  Post.findByIdAndDelete({ _id: req.params.id })
+    .then((doc) => console.log(doc))
+    .catch((err) => console.log(err));
+});
+
+app.put("/update/:id", (req, res) => {
+  console.log(req.params);
+  console.log(req.body);
+});
+
 app.listen(3001, function () {
   console.log("running !");
 });
