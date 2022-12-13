@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Form, Button } from "semantic-ui-react";
-//import axios from "axios";
+import axios from "axios";
 
 export default function Create() {
   const [input, setInput] = useState({
-    fname: "",
-    lname: "",
+    firstName: "",
+    lastName: "",
   });
   function handleChange(e) {
     const { name, value } = e.target;
@@ -20,6 +20,10 @@ export default function Create() {
   function handleClick(event) {
     event.preventDefault();
     console.log(input);
+    axios
+      .post("http://localhost:3001/create", input)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
   return (
     <div>
@@ -29,8 +33,8 @@ export default function Create() {
           <div>
             <input
               onChange={handleChange}
-              name="fname"
-              value={input.fname}
+              name="firstName"
+              value={input.firstName}
               placeholder="First Name"
             />
           </div>
@@ -40,8 +44,8 @@ export default function Create() {
           <div>
             <input
               onChange={handleChange}
-              name="lname"
-              value={input.lname}
+              name="lastName"
+              value={input.lastName}
               placeholder="Last Name"
             />
           </div>
