@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "semantic-ui-react";
+import { useHistory } from "react-router-dom";
 
 export default function Read() {
+  const history = useHistory();
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     axios
@@ -32,7 +34,7 @@ export default function Read() {
       }}
     >
       <h1>All the users</h1>
-      <Button>Back</Button>
+      <Button onClick={() => history.push("/")}>Back</Button>
       {posts ? (
         <>
           {posts.map((post) => {

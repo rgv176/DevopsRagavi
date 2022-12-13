@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 export default function Create() {
+  const history = useHistory();
   const [input, setInput] = useState({
     firstName: "",
     lastName: "",
@@ -24,6 +26,7 @@ export default function Create() {
       .post("http://localhost:3001/create", input)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+    history.push("/read");
   }
   return (
     <div>
