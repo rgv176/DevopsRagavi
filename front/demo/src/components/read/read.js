@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "semantic-ui-react";
+
 export default function Read() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function Read() {
       .delete(`http://localhost:3001/delete/${id}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+    window.location.reload();
   };
 
   return (
@@ -30,6 +32,7 @@ export default function Read() {
       }}
     >
       <h1>All the users</h1>
+      <Button>Back</Button>
       {posts ? (
         <>
           {posts.map((post) => {
