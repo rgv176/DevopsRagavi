@@ -43,8 +43,15 @@ app.delete("/delete/:id", (req, res) => {
 });
 
 app.put("/update/:id", (req, res) => {
-  console.log(req.params);
-  console.log(req.body);
+  Post.findByIdAndUpdate(
+    { _id: req.params.id },
+    {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+    }
+  )
+    .then((doc) => console.log(doc))
+    .catch((err) => console.log(err));
 });
 
 app.listen(3001, function () {
