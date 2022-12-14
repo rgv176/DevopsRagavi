@@ -2,13 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
-import {
-  Modal,
-  Form,
-  FormGroup,
-  FormControl,
-  ControlLabel,
-} from "react-bootstrap";
+import { Modal, Form } from "react-bootstrap";
+import "./read.css";
 
 export default function Read() {
   const [show, setShow] = useState(false);
@@ -63,14 +58,7 @@ export default function Read() {
   };
 
   return (
-    <div
-      style={{
-        width: "50%",
-        textAlign: "center",
-        margin: "10px 10px",
-        padding: "50px",
-      }}
-    >
+    <div className="main1">
       <h1>All the users</h1>
       <Button
         style={{
@@ -84,21 +72,42 @@ export default function Read() {
         Back
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        style={{
+          textAlign: "center",
+          border: "solid 1px",
+          marginLeft: "30%",
+          marginRight: "30%",
+          marginTop: "2%",
+          marginBottom: "5%",
+          justifyContent: "space-between",
+          height: "15%",
+        }}
+      >
         <Modal.Header>
-          <Modal.Title>Update an User</Modal.Title>
+          <Modal.Title style={{ fontWeight: "900" }}>
+            Update an User
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group>
+            <Form.Group
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
               <Form.Control
-                style={{ marginBottom: "1rem" }}
+                style={{ marginLeft: "10%" }}
                 placeholder="firstName"
                 name="firstName"
                 value={updatedPost.firstName ? updatedPost.firstName : ""}
                 onChange={handleChange}
               />
               <Form.Control
+                style={{ marginRight: "10%" }}
                 placeholder="lastName"
                 name="lastName"
                 value={updatedPost.lastName ? updatedPost.lastName : ""}
@@ -107,11 +116,19 @@ export default function Read() {
             </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Modal.Footer style={{ marginTop: "3%" }}>
+          <Button
+            variant="secondary"
+            onClick={handleClose}
+            style={{ background: "black", color: "white" }}
+          >
             Close
           </Button>
-          <Button variant="primary" onClick={saveUpdatedPost}>
+          <Button
+            variant="primary"
+            onClick={saveUpdatedPost}
+            style={{ background: "rgb(15, 101, 172)", color: "white" }}
+          >
             Save Changes
           </Button>
         </Modal.Footer>

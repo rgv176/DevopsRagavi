@@ -39,6 +39,7 @@ export default function Create() {
               name="firstName"
               value={input.firstName}
               placeholder="First Name"
+              style={{ width: "50%" }}
             />
           </div>
         </Form.Field>
@@ -50,10 +51,16 @@ export default function Create() {
               name="lastName"
               value={input.lastName}
               placeholder="Last Name"
+              style={{ width: "50%" }}
             />
           </div>
         </Form.Field>
-        <Button onClick={handleClick} type="submit">
+        <Button
+          onClick={handleClick}
+          type="submit"
+          className="button"
+          style={{ background: "rgb(15, 101, 172)", color: "white" }}
+        >
           Submit
         </Button>
       </Form>
