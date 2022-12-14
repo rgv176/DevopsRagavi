@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+
+  mongodb:
+    image: mongo
+    volumes:
+      - data:/data/db
+  back:
+    build: ./back
+    ports:
+      - 3001:3001
+    volumes:
+      - logs:/app/logs
+      - ./back:/app
+      - /app/node_modules
+    environment:
+      - MONGO_URL= mongodb+srv://DevopsUsername:DevopsPassword@cluster0.5ngkur4.mongodb.net/test
+    depends_on:
+      - mongodb
+
+  front:
+    build: ./front
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front/src:/app/src
+    stdin_open: true
+    tty: true
+    depends_on:
+      - back
+volumes:
+  data:
+  logs:
+
+  
