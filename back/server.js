@@ -3,6 +3,7 @@ var app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
+mongoose.set("strictQuery", true);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
