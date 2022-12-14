@@ -55,6 +55,6 @@ app.put("/update/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.listen(3001, function () {
+app.listen(process.env.port || 3001, function () {
   console.log("running !");
 });
