@@ -49,7 +49,7 @@ export default function Read() {
 
   const saveUpdatedPost = () => {
     axios
-      .put(`/update/${updatedPost._id}`, updatedPost)
+      .put(`http://localhost:3001/update/${updatedPost._id}`, updatedPost)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
