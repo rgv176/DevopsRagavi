@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -55,7 +55,6 @@ app.put("/update/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.listen(process.env.port || 3001, function () {
-  res.send("Hello !");
+app.listen(3001, function () {
   console.log("running !");
 });
