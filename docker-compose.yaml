@@ -18,7 +18,7 @@ services:
       - ./back:/app
       - /app/node_modules
     environment:
-      - MONGO_URL= mongodb+srv://DevopsUsername:DevopsPassword@cluster0.5ngkur4.mongodb.net/test
+      - MONGO_URI= mongodb+srv://DevopsUsername:DevopsPassword@cluster0.5ngkur4.mongodb.net/test
     depends_on:
       - mongodb
 
