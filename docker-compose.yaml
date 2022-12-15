@@ -3,10 +3,13 @@ version: '3.3'
 services:
 
   mongodb:
+    container_name: mongo-backend
     image: mongo
     volumes:
       - data:/data/db
   back:
+    container_name: back-container
+    restart: always
     build: ./back
     ports:
       - 3001:3001
@@ -20,6 +23,8 @@ services:
       - mongodb
 
   front:
+    container_name: front-container
+    restart: always
     build: ./front
     ports:
       - 3000:3000
