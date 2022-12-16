@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers:
+      - name: server
+        image: "rgv176/devopsragavi-back"
+        ports:
+         - containerPort: 3001
+        volumeMounts:
+          - mountPath: /app/logs
+            name: logs
+          - mountPath: /app
+            name: back-claim1
+          - mountPath: /app/node_modules
+            name: back-claim2
+      restartPolicy: Always
+      volumes:
+      - name: logs
+        persistentVolumeClaim:
+          claimName: logs
+      - name: back-claim1
+        persistentVolumeClaim:
+          claimName: back-claim1
+      - name: back-claim2
+        persistentVolumeClaim:
+           claimName: back-claim2
+
+
+          

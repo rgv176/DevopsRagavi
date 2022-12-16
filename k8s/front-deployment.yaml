@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+      - name: front
+        image: "rgv176/devopsragavi-front"
+        ports:
+        - containerPort: 3000
+        stdin: true
+        tty: true
+        volumeMounts:
+        - mountPath: /app/src
+          name: front-claim0
+      restartPolicy: Always
+      volumes:
+      - name: front-claim0
+        persistentVolumeClaim:
+          claimName: front-claim0
+
+          
