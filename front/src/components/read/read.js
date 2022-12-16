@@ -73,6 +73,7 @@ export default function Read() {
       </Button>
 
       <Modal
+        animation={false}
         show={show}
         onHide={handleClose}
         style={{
