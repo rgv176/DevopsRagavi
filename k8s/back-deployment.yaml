@@ -20,24 +20,5 @@ spec:
         env:
         - name: MONGO_URI
           value: mongodb+srv://DevopsUsername:DevopsPassword@cluster0.5ngkur4.mongodb.net/test
-        volumeMounts:
-          - mountPath: /app/logs
-            name: logs
-          - mountPath: /app
-            name: back-claim1
-          - mountPath: /app/node_modules
-            name: back-claim2
-      restartPolicy: Always
-      volumes:
-      - name: logs
-        persistentVolumeClaim:
-          claimName: logs
-      - name: back-claim1
-        persistentVolumeClaim:
-          claimName: back-claim1
-      - name: back-claim2
-        persistentVolumeClaim:
-           claimName: back-claim2
 
-
-          
+      
