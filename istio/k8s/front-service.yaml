@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: front-service
 spec:
-  type: NodePort
+  type: LoadBalanacer
   selector:
     component: web
   ports:
   - port: 3000
     targetPort: 3000
     nodePort: 31515
-  type: LoadBalancer
+
 
