@@ -20,8 +20,8 @@ jobs:
       run: docker ps -a
     - name: Run docker Docker-compose
       run: docker-compose up -d
-    - name: test
-      run: http://localhost:3000/
+    - name: Test
+      run: docker run --network container:front-containerd appropriate/curl -s --retry 10 --retry-connrefused http://localhost:3000/
 
 
 
