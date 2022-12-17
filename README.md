@@ -159,7 +159,7 @@ I added the istio inejection and i saw there is now two containers running:
 
 [![kub3][product-screenshot10]](https://example.com)
 
-Then we run the project with minikube **BE SURE TO HAVE A KUB KLUSTER**:
+Then we run the project with minikube **BE SURE TO HAVE A KUB CLUSTER**:
 
 [![kub4][product-screenshot11]](https://example.com)
 
@@ -176,6 +176,8 @@ Then, we monitored with Grafana, but as Grafana was running in the port 3000 and
 [![kub8][product-screenshot15]](https://example.com)
 
 [![kub9][product-screenshot16]](https://example.com)
+
+<p> I had some issue to deploy on Heroku because we need to pay so i didn't do it</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
