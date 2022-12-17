@@ -21,7 +21,10 @@ jobs:
     - name: Run docker Docker-compose
       run: docker-compose up -d
     - name: Pull all the images
-      run: docker pull rgv176/devopsragavi-front rgv176/devopsragavi-back rgv176/mongo
+      run: 
+        docker pull rgv176/devopsragavi-front  
+        docker pull rgv176/devopsragavi-back
+        docker pull rgv176/mongo
 
 
 
