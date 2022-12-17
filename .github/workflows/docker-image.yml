@@ -25,6 +25,8 @@ jobs:
         docker pull rgv176/devopsragavi-front  
         docker pull rgv176/devopsragavi-back
         docker pull rgv176/mongo
+    - name: Check images
+      run: docker images
 
 
 
