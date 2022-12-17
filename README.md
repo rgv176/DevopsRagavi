@@ -12,7 +12,7 @@
   <h3 align="center">Devops Project</h3>
 
   <p align="center">
-    Please be sure to read all the README file!
+    MAHENTHIRAN Ragavi GR05 (inter)
     </p>
 </div>
 
@@ -141,7 +141,7 @@ Then we can see, all the registrated users:
 
 We can also update the first name or the last name:
 
-[![Update1][product-screenshot5](https://example.com)
+[![Update1][product-screenshot5]](https://example.com)
 
 [![Update2][product-screenshot6]](https://example.com)
 
@@ -151,6 +151,32 @@ And then we can delete:
 
 With **Kubernetes**, i had some issue on ubuntu but it worked:
 
+[![kub1][product-screenshot8]](https://example.com)
+
+I added the istio inejection and i saw there is now two containers running:
+
+[![kub2][product-screenshot9]](https://example.com)
+
+[![kub3][product-screenshot10]](https://example.com)
+
+Then we run the project with minikube **BE SURE TO HAVE A KUB KLUSTER**:
+
+[![kub4][product-screenshot11]](https://example.com)
+
+[![kub5][product-screenshot12]](https://example.com)
+
+We can easily update the items but to delete, i had some issues on **UBUNTU**, i had to press button 5 times to delete:
+
+[![kub6][product-screenshot13]](https://example.com)
+
+[![kub7][product-screenshot14]](https://example.com)
+
+Then, we monitored with Grafana, but as Grafana was running in the port 3000 and the React front-end was also running on the port 3000, Grafana couldn't analyze the front:
+
+[![kub8][product-screenshot15]](https://example.com)
+
+[![kub9][product-screenshot16]](https://example.com)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
@@ -158,15 +184,15 @@ With **Kubernetes**, i had some issue on ubuntu but it worked:
 ## Roadmap
 
 - ✅ Add Front end
-- [x] Add back end
-- [x] Add Additional style (css, semantic-ui, bootstrap)
-- [x] Add CRUD API + test
-- [x] Add Vagrantfile and playbook for Ansible
-- [x] Add Github Actions
-- [x] Deploy with Docker (Dockerfile, Docker-compose)
-- [x] Deploy with kubernetes (install minikube, kubectl)
-- [x] Monitoring (Prometheus, Grafana)
-- [] Deploy with Heroku or Render
+- ✅ Add back end
+- ✅ Add Additional style (css, semantic-ui, bootstrap)
+- ✅ Add CRUD API + test
+- ✅ Add Vagrantfile and playbook for Ansible
+- ✅ Add Github Actions
+- ✅ Deploy with Docker (Dockerfile, Docker-compose)
+- ✅ Deploy with kubernetes (install minikube, kubectl)
+- ✅ Monitoring (Prometheus, Grafana)
+- [ ] Deploy with Heroku or Render
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -176,9 +202,9 @@ With **Kubernetes**, i had some issue on ubuntu but it worked:
 
 You can find the 3 images of the project in DockerHub:
 
-- rgv176/mongo
-- rgv176/devopsragavi-front
-- rgv176/devopsragavi-back
+- <p>(<a href="https://hub.docker.com/search?q=rgv176%2Fmongo">rgv176/mongo)</p>
+- <p>(<a href="https://hub.docker.com/r/rgv176/devopsragavi-front">rgv176/devopsragavi-front)</p>
+- <p>(<a href="https://hub.docker.com/r/rgv176/devopsragavi-back">rgv176/devopsragavi-back)</p>
 
 ## Bonus-tasks
 
@@ -197,8 +223,6 @@ Project Link: [https://github.com/rgv176/DevopsRagavi](https://github.com/your_u
 
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
 - [ECE](https://github.com/adaltas/ece-devops-2022-fall)
 - [Img Shields](https://shields.io)
 - [React Icons](https://react-icons.github.io/react-icons/search)
@@ -214,6 +238,15 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot5]: istio/images/devops5.png
 [product-screenshot6]: istio/images/devops6.png
 [product-screenshot7]: istio/images/devops7.png
+[product-screenshot8]: istio/images/devops8.png
+[product-screenshot9]: istio/images/devops9.png
+[product-screenshot10]: istio/images/devops10.png
+[product-screenshot11]: istio/images/devops11.png
+[product-screenshot12]: istio/images/devops12.png
+[product-screenshot13]: istio/images/devops13.png
+[product-screenshot14]: istio/images/devops14.png
+[product-screenshot15]: istio/images/devops15.png
+[product-screenshot16]: istio/images/devops16.png
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
