@@ -20,8 +20,8 @@ jobs:
       run: docker ps -a
     - name: Run docker Docker-compose
       run: docker-compose up -d
-    - name: Test
-      run: docker container run front-container -d
+    - name: Test pull an image
+      run: docker pull rgv176/devopsragavi-front
 
 
 
