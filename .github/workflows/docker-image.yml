@@ -19,7 +19,7 @@ jobs:
     - name: Check running containers
       run: docker ps -a
     - name: Run docker Docker-compose
-      run: docker-compoe up
+      run: docker-compose up
     - name: test
       run: http://localhost:3000/
 
